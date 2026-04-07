@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Android.Content;
+﻿using Android.Content;
 using Android.Database;
 using Android.Provider;
 using Microsoft.Maui.ApplicationModel;
