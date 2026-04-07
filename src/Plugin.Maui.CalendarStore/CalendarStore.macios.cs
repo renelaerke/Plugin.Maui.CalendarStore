@@ -381,12 +381,13 @@ partial class CalendarStoreImplementation : ICalendarStore
 	{
 		foreach (var calendar in native)
 		{
+			Debug.WriteLine($"{calendar.Source.Title} - {calendar.Title}");
 			yield return ToCalendar(calendar);
 		}
 	}
 
 	static Calendar ToCalendar(EKCalendar calendar) =>
-		new(calendar.CalendarIdentifier, calendar.Title,
+		new(calendar.CalendarIdentifier, calendar.Source.Title,calendar.Title,
 			new UIColor(calendar.CGColor).AsColor(),
 			!calendar.AllowsContentModifications);
 

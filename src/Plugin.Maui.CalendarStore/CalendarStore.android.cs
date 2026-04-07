@@ -1,4 +1,5 @@
-﻿using Android.Content;
+﻿using System.Diagnostics;
+using Android.Content;
 using Android.Database;
 using Android.Provider;
 using Microsoft.Maui.ApplicationModel;
@@ -25,6 +26,8 @@ partial class CalendarStoreImplementation : ICalendarStore
 				CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName,
 				CalendarContract.Calendars.InterfaceConsts.CalendarColor,
 				CalendarContract.Calendars.InterfaceConsts.CalendarAccessLevel,
+				CalendarContract.Calendars.InterfaceConsts.AccountName,
+				CalendarContract.Calendars.InterfaceConsts.AccountType,
 			];
 
 	readonly List<string> eventsColumns = [
@@ -676,6 +679,8 @@ partial class CalendarStoreImplementation : ICalendarStore
 
 		return new(cursor.GetString(projection.IndexOf(
 			CalendarContract.Calendars.InterfaceConsts.Id)) ?? string.Empty,
+			cursor.GetString(projection.IndexOf(
+				CalendarContract.Calendars.InterfaceConsts.AccountName)) ?? string.Empty,
 			cursor.GetString(projection.IndexOf(
 				CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName)) ?? string.Empty,
 			virtualColor, virtualCalendarReadOnly);
