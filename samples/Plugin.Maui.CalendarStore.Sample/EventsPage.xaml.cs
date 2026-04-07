@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 
 namespace Plugin.Maui.CalendarStore.Sample;
 
