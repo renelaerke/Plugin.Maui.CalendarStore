@@ -27,7 +27,6 @@ partial class CalendarStoreImplementation : ICalendarStore
 				CalendarContract.Calendars.InterfaceConsts.CalendarColor,
 				CalendarContract.Calendars.InterfaceConsts.CalendarAccessLevel,
 				CalendarContract.Calendars.InterfaceConsts.AccountName,
-				CalendarContract.Calendars.InterfaceConsts.AccountType,
 			];
 
 	readonly List<string> eventsColumns = [
