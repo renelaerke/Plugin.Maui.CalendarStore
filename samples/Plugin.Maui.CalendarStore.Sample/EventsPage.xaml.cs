@@ -79,7 +79,7 @@ public partial class EventsPage : ContentPage
 	async Task LoadEvents()
 	{
 		IEnumerable<CalendarEvent>? events = await CalendarStore.Default
-			.GetEvents(startDate: DateTimeOffset.Now.AddDays(-70),
+			.GetEvents(startDate: DateTimeOffset.Now.AddDays(-7),
 			endDate: DateTimeOffset.Now.AddDays(7));
 
 		Events.Clear();
