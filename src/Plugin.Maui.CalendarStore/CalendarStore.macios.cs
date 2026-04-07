@@ -381,7 +381,6 @@ partial class CalendarStoreImplementation : ICalendarStore
 	{
 		foreach (var calendar in native)
 		{
-			Debug.WriteLine($"{calendar.Source.Title} - {calendar.Title}");
 			yield return ToCalendar(calendar);
 		}
 	}
