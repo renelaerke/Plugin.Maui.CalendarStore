@@ -677,15 +677,10 @@ partial class CalendarStoreImplementation : ICalendarStore
 		var virtualCalendarReadOnly = platformCalendarReadOnly ==
 			(int)CalendarAccess.AccessRead;
 
-		var accountName = cursor.GetString(projection.IndexOf(
-			CalendarContract.Calendars.InterfaceConsts.AccountName));
-		var accountType = cursor.GetString(projection.IndexOf(
-			CalendarContract.Calendars.InterfaceConsts.AccountType));
-		
-		Debug.WriteLine($"{accountName} : {accountType}");
-		
 		return new(cursor.GetString(projection.IndexOf(
 			CalendarContract.Calendars.InterfaceConsts.Id)) ?? string.Empty,
+			cursor.GetString(projection.IndexOf(
+				CalendarContract.Calendars.InterfaceConsts.AccountName)) ?? string.Empty,
 			cursor.GetString(projection.IndexOf(
 				CalendarContract.Calendars.InterfaceConsts.CalendarDisplayName)) ?? string.Empty,
 			virtualColor, virtualCalendarReadOnly);
